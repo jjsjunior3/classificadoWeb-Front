@@ -1,9 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Page = (props) => {
+import './App.css';
+
+import { Template } from './components/MainComponents';
+import Header from './components/partials/Header';
+import Footer from './components/partials/Footer';
+
+import { RouteList } from './RouteList';
+
+const App = (props) => {
   return (
-    <div> Estamos no ar...</div>
+    <Template>
+        <Header />
+
+        <RouteList />
+
+        <Footer />
+    </Template>
   );
 }
 
@@ -19,4 +33,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export default connect(mapDispatchToProps, mapStateToProps)(Page);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
